@@ -34,6 +34,7 @@ class GoogleMap extends Component {
 				position: new google.maps.LatLng(placeLoc.lat(), placeLoc.lng()),
 				map: map
 			})
+
 			bounds.extend(marker.position)
 			markers.push(marker)
 		})
@@ -45,7 +46,7 @@ class GoogleMap extends Component {
 
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(prevLocation) {
 		this.createMarker(this.props.locations);
 	}
 
